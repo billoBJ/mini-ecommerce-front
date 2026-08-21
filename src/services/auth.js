@@ -1,6 +1,14 @@
+import axios from 'axios'
 import api from './api'
 
-export function login(credentials) {
+export function getCsrfCookie() {
+  return axios.get(`${import.meta.env.VITE_APP_URL}/sanctum/csrf-cookie`, {
+    withCredentials: true,
+  })
+}
+
+export async function login(credentials) {
+  await getCsrfCookie()
   return api.post('/auth/login', credentials)
 }
 
