@@ -24,6 +24,10 @@ async function handleLogout() {
       <span v-if="auth.user">Hola, {{ auth.user.name }} ({{ auth.user.email }})</span>
       <button @click="handleLogout">Cerrar sesión</button>
     </header>
+
+    <nav>
+      <RouterLink :to="{ name: 'products' }">Productos</RouterLink>
+    </nav>
   </div>
 </template>
 
@@ -34,5 +38,13 @@ async function handleLogout() {
   align-items: center;
   padding: 1rem;
   border-bottom: 1px solid #e5e7eb;
+}
+
+.dashboard nav {
+  padding: 1rem;
+}
+
+.dashboard nav a {
+  color: #2563eb;
 }
 </style>
