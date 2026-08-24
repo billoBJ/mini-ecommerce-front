@@ -27,6 +27,8 @@ async function handleLogout() {
 
     <nav>
       <RouterLink :to="{ name: 'products' }">Productos</RouterLink>
+      <RouterLink :to="{ name: 'customers' }">Clientes</RouterLink>
+      <RouterLink :to="{ name: 'orders' }">Órdenes</RouterLink>
     </nav>
   </div>
 </template>
@@ -46,5 +48,6 @@ async function handleLogout() {
 
 .dashboard nav a {
   color: #2563eb;
+  margin-right: 1rem;
 }
 </style>
