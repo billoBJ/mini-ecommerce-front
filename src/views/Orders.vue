@@ -13,10 +13,6 @@ const products = ref([])
 const loading = ref(true)
 const listError = ref('')
 
-// Mirrors Order::allowedTransitions() on the backend — the frontend
-// respects the same state machine so it only ever offers valid moves.
-// The backend is still the source of truth: if these ever drift out of
-// sync, the API responds with 409 and the error shows up per-order.
 const STATUS_FLOW = {
   pending: ['confirmed', 'cancelled'],
   confirmed: ['processing', 'cancelled'],
